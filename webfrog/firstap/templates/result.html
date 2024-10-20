@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Информация о пользователе</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+        background: 	#BC8F8F;
+        color: #fff;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .form-control {
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .form-text {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Информация о пользователе</h2>
+        <div class="result">
+            <p><strong>Имя:</strong> {{ name }}</p>
+            <p><strong>Возраст:</strong> {{ age }}</p>
+            <p><strong>Вы пользуетесь наземным транспортом:</strong> {{ adoyou }}</p>
+            <p><strong>Вы довольны качеством наземного транспорта:</strong> {{ bdoyou }}</p>
+            <p><strong>Email:</strong> {{ email }}</p>
+            <p><strong>Пользуетесь ли вы сайтом по поиску билетов:</strong> {{ cdoyou }}</p>
+            <p><strong>Ссылка на сайт:</strong> {{ url_text }}</p>
+            <p><strong>Фото(3x4):</strong> {% if file %}<a href="{{ file.url }}">{{ file.name }}</a>{% else %}Нет{% endif %}</p>
+            <p><strong>Ещё одно фото:</strong> {% if file_path %}<a href="{{ file_path.url }}">{{ file_path.name }}</a>{% else %}Нет{% endif %}</p>
+            <p><strong>Телефон:</strong> {{ regex }}</p>
+            <p><strong>Каким из маршрутов чаще пользуетесь:</strong> {{ choice }}</p>
+        </div>
+        <div class="text-center mt-4">
+            <a href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" class="btn btn-secondary">Назад</a>
+        </div>
+    </div>
+</body>
+</html>
